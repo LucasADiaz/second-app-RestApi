@@ -1,0 +1,25 @@
+[{
+    "id": "1",
+    "name": "El arte de la guerra",
+    "authorId": "1"
+}, {
+    "id": "2",
+    "name": "un pequeño delincuente",
+    "authorId": "1"
+}, {
+    "id": "3",
+    "name": "el mistero de Trump",
+    "authorId": "2"
+}, {
+    "id": "4",
+    "name": "La guerra de los mundos",
+    "authorId": "2"
+}, {
+    "id": "5",
+    "name": "un gato solitario",
+    "authorId": "3"
+}, {
+    "id": "6",
+    "name": "Hoy es un buen dia para programar",
+    "authorId": "3"
+}]
