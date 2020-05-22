@@ -14,8 +14,7 @@ app.use(express.json());
 
 //routes
 app.use(require('../routes/index'));
-app.use('/api/movies', require('../routes/movies'));
-app.use('/api/users', require('../routes/users'));
+
 //importamos la ruta de los libros
 app.use('/api/books', require('../routes/books'));
 app.use('/api/authors', require('../routes/author'));

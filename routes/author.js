@@ -15,9 +15,9 @@ router.get('/', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     const { id } = req.params;
-    _.remove(authors, async(author, i) => {
+    _.remove(authors, (author, i) => {
         if (author.id == id) {
-            await _.each(books, (book) => {
+            _.each(books, (book) => {
                 if (book.authorId === id) {
                     res.json({ "msj": "can not delete an author if they have books in library" });
                 }
