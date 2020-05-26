@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
+const routes = require('./routes/index')
+
+
 
 //settings
 app.set('port', process.env.PORT || 3000);
@@ -13,11 +16,8 @@ app.use(express.json());
 
 
 //routes
-app.use(require('../routes/index'));
+app.use(routes);
 
-//importamos la ruta de los libros
-app.use('/api/books', require('../routes/books'));
-app.use('/api/authors', require('../routes/author'));
 
 //starting server
 app.listen(3000, () => {
