@@ -2,6 +2,8 @@ const books = require("../books.json");
 const { ErrorBadRequest, ErrorNotFound, ErrorUsed } = require('../error/error');
 const authorService = require("../services/authors");
 const _ = require('lodash');
+//para solucionar los id repetidos, se realizo siguienteId
+let siguienteId = books.length;
 
 module.exports.create = (body) => {
     const { name, authorId } = body;
@@ -14,6 +16,7 @@ module.exports.create = (body) => {
                     "name": body.name,
                     "authorId": body.authorId
                 });
+                siguienteId += 1;
                 return authors;
             }
         }
@@ -44,7 +47,6 @@ module.exports.getbooksByAuthor = (id) => {
 
     // const booksArray = [];
     for (const book of books) {
-        console.log("5");
         if (book.authorId === id) {
             return true;
             // booksArray.push(book);

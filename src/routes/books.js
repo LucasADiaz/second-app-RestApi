@@ -41,10 +41,8 @@ router.post('/', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     const { id } = req.params;
-    console.log("1");
 
     const promesa = new Promise((resolve, reject) => {
-        console.log("2");
         const solution = bookService.deleteOne(id);
         resolve(solution);
 
@@ -97,52 +95,4 @@ router.put('/:id', (req, res) => {
 });
 
 
-
 module.exports = router;
-
-
-// router.post('/', (req, res) => {
-//     const { name, authorId } = req.body;
-//     if (name && authorId) {
-//         _.each(authors, (author, i) => {
-//             if (author.id == authorId) {
-//                 const id = `${books.length + 1}`;
-//                 const newBook = { id, ...req.body };
-//                 books.push(newBook);
-//                 res.status(201).json({
-//                     message: "You have successfully obtained all the resources!",
-//                     data: books,
-//                 });
-//             }
-//         });
-//         res.status(404).json({ error: "no existe ese autor" });
-//     } else {
-//         res.status(400).json({ error: "there was error" });
-//     }
-// });
-// router.delete('/:id', (req, res) => {
-//     const { id } = req.params;
-//     longitudOriginal = books.length;
-//     _.remove(books, (book, i) => {
-//         return book.id == id;
-//     });
-//     if (books.length === longitudOriginal) {
-//         res.status(400).json({ error: "do not exist that id" });
-//     } else {
-//         res.send(books);
-//     }
-// });
-// put
-// _.each(books, (book) => {
-//     if (book.id == id) {
-//         _.each(authors, (author) => {
-//             if (author.id == authorId) {
-//                 book.name = name;
-//                 book.authorId = authorId;
-//                 res.json(book);
-//             }
-//         });
-//         res.status(404).json({ error: "author do not exist" });
-//     }
-// });
-// res.status(404).json({ 'statusCode': "book do not exist" });

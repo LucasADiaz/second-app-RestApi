@@ -2,9 +2,14 @@ const authors = require('../authors.json');
 const bookServices = require('../services/books');
 const { ErrorNotFound, ErrorBadRequest, ErrorUsed } = require('../error/error');
 const _ = require('lodash');
+let siguienteId = authors.length;
 
 module.exports.create = (body) => {
-    const id = `${authors.length + 1}`;
+
+    // const id = `${authors.length + 1}`;
+
+    const id = `${siguienteId + 1}`;
+    siguienteId += 1;
     authors.push({
         "id": id,
         "name": body.name,
@@ -47,7 +52,6 @@ module.exports.deleteOne = (id) => {
                 throw new ErrorUsed('you can not delete an author with books');
             }
             if (!encontrados) {
-                console.log("5");
                 _.remove(authors, a => {
                     return a.id == id;
                 });
